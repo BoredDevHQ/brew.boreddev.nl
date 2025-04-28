@@ -499,3 +499,71 @@ pre[class*="language-"] {
 .hero::after {
     display: none;
 }
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 1s forwards 0.5s;
+    opacity: 0;
+  }
+  
+  .scroll-indicator .text {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #C6A57B;
+    font-weight: 500;
+  }
+  
+  .scroll-indicator .icon {
+    position: relative;
+    width: 30px;
+    height: 50px;
+    border: 2px solid #C6A57B;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  .scroll-indicator .icon::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    background: #C6A57B;
+    border-radius: 2px;
+    animation: scrollDown 2s infinite;
+  }
+  
+  @keyframes scrollDown {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(15px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .scroll-indicator {
+      bottom: 30px;
+    }
+  }
