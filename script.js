@@ -71,3 +71,17 @@ document.querySelectorAll('.code-block').forEach(block => {
         this.style.borderColor = '#3A404C';
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector("header"); 
+    if (header) {
+      const scrollIndicator = document.createElement("div");
+      scrollIndicator.className = "scroll-indicator";
+      scrollIndicator.innerHTML = `
+        <div class="text">Scroll Down</div>
+        <div class="icon"></div>
+      `;
+      header.appendChild(scrollIndicator);
+    }
+  });
